@@ -1,0 +1,185 @@
+#include <iostream>
+#include <math.h>
+#include <stdlib.h>
+using namespace std;
+
+class calculator{
+
+protected:
+    int num1;
+    int num2;
+
+public:
+    void set_data(int a ,int b){
+    num1 = a;
+    num2 = b;
+    }
+    Add(){}
+    Add(int a , int b);//Will give sum of two numbers
+    Sub(int a , int b);//Will give the subtraction of two numbers
+    Div(int a , int b);//Will give division of two numbers
+    Mul(int a , int b);//Will give the multiplication of two numbers
+    };
+
+    int calculator :: Add(int a , int b){
+        cout<<"Your numbers are "<<a<<" and "<<b<<endl;
+        cout<<endl;
+    cout<<"Addition of given numbers       =  "<<a+b<<endl;
+    }
+    int calculator :: Sub(int a , int b){
+        cout<<"Your numbers are "<<a<<" and "<<b<<endl;
+        cout<<endl;
+    cout<<"Subtraction of given numbers    =  "<<a-b<<endl;
+    }
+    int calculator :: Div(int a , int b){
+        cout<<"Your numbers are "<<a<<" and "<<b<<endl;
+        cout<<endl;
+    cout<<"Division of given numbers       =  "<<a/b<<endl;
+    }
+    int calculator :: Mul(int a , int b){
+        cout<<"Your numbers are "<<a<<" and "<<b<<endl;
+        cout<<endl;
+    cout<<"Multiplication of given numbers =  "<<a*b<<endl;
+    }
+
+    class Scientific{
+
+protected:
+    int num3;
+    int num4;
+    float num5;
+    int num6;
+
+public:
+    Sqrt(int num3);
+    Sq(int num4);
+    Inv(float num5 , float raisdedto);
+    Trigno(int num6);
+    };
+
+    int Scientific :: Sqrt(int num3){
+        cout<<"Your number is = "<<num3<<endl;
+        cout<<endl;
+        cout<<"Square Root is = "<<sqrt(num3)<<endl;
+
+    }
+     int Scientific :: Sq(int num4){
+         cout<<"Your number is = "<<num4<<endl;
+         cout<<endl;
+         cout<<"Square is = "<<pow(num4 , 2)<<endl;
+    }
+     int Scientific :: Inv(float num5 , float raisedto){
+         cout<<"Your numbers are = "<<num5 <<" and "<<raisedto <<endl;
+         cout<<endl;
+         cout<<"Inverse is = "<<1/(pow(num5,raisedto))<<endl;
+    }
+     int Scientific :: Trigno(int num6){
+         cout<<"Your number is "<<num6<<endl;
+         cout<<endl;
+         cout<<"sin"<<num6<<" = ";
+         cout<<sin((num6*(3.14))/180)<<endl;
+    }
+    class Derived : public calculator,public Scientific
+    {
+    public:
+
+
+    };
+
+
+int main()
+{
+
+cout<<"            !!!!   Now we will work upon a scientific calculator   !!!!"<<endl;
+cout<<endl;
+int seq;
+cout<<"For Performing Addition enter 1"<<endl;
+cout<<"For Performing Subtraction enter 2"<<endl;
+cout<<"For Performing Division enter 3"<<endl;
+cout<<"For Performing Multiplication enter 4"<<endl;
+cout<<"For Find Square Root  enter 5"<<endl;
+cout<<"For Find Square enter 6"<<endl;
+cout<<"For Find Inverse enter 7"<<endl;
+cout<<"For Trignometric Solutions enter 8"<<endl;
+cout<<endl;
+cin>>seq;
+
+system("cls");
+Derived D1;
+
+if (seq==1){
+    int a1,a2;
+
+    cout<<"Enter Numbers to Add "<<endl;
+        cin>>a1;
+        cout<<endl;
+        cin>>a2;
+        system("cls");
+ D1.Add(a1,a2);
+}
+if (seq==2){
+    int b1,b2;
+    cout<<"Enter Numbers to Subtract "<<endl;
+        cin>>b1;
+        cout<<endl;
+        cin>>b2;
+        system("cls");
+ D1.Sub(b1,b2);
+}
+if (seq==3){
+    int c1,c2;
+    cout<<"Enter Numbers to Divide "<<endl;
+        cin>>c1;
+        cout<<endl;
+        cin>>c2;
+        system("cls");
+ D1.Div(c1,c2);
+}
+if (seq==4){
+    int d1,d2;
+    cout<<"Enter Numbers to Multiply "<<endl;
+        cin>>d1;
+        cout<<endl;
+        cin>>d2;
+        system("cls");
+ D1.Mul(d1,d2);
+}
+if (seq==5){
+
+    int e1;
+    cout<<"Enter Number to Find Square Root of "<<endl;
+        cin>>e1;
+        system("cls");
+ D1.Sqrt(e1);
+}
+if (seq==6){
+    int f1;
+    cout<<"Enter Number to Square of  "<<endl;
+        cin>>f1;
+        system("cls");
+ D1.Sq(f1);
+}
+if (seq==7){
+    int g1,g2;
+    cout<<"Enter Number to Find Inverse of "<<endl;
+    cin>>g1;
+    cout<<"enter degree of number raised"<<endl;
+        cout<<endl;
+        cin>>g2;
+        system("cls");
+ D1.Inv(g1,g2);
+}
+if (seq==8){
+    int h1;
+    cout<<"Enter Angle in Degree "<<endl;
+        cin>>h1;
+        system("cls");
+ D1.Trigno(h1);
+}
+if (seq>8){
+    cout<<"You Entered The Wrong Number"<<endl;
+}
+
+
+    return 0;
+}
