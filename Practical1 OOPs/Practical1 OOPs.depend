@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1636944499 source:c:\users\mayur\onedrive\desktop\oops assignment\practical1 oops\main.cpp
+	<iostream>
+	<cstring>
+	<iomanip>
+
